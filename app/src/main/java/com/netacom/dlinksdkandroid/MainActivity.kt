@@ -23,9 +23,9 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
 
-    private val user8 = NeUser(id = 281474977316524, token = "3c1e907f50193ef90ab650daee261bd05f1d4c78", username = "Toan 3333")
+    private val user8 = NeUser(id = 281474977316524, token = "cae12d8a4df81813e5b07c874efbf878cf5e428a", username = "Toan 3333")
 
-    private val user9 = NeUser(id = 281474977316531, token = "e1902d5cd68eaaf5fa7a5b2249ab396be9a3daaa", username = "Toan 4444")
+    private val user9 = NeUser(id = 281474977316531, token = "cbd155777c8e46358756a7a7eca73609fde92e7b", username = "Toan 4444")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
