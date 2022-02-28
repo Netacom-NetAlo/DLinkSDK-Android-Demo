@@ -55,8 +55,8 @@ class ChatSdkApplication : Application(), Configuration.Provider {
             netAloSdkCore = netAloSdkCore,
             sdkConfig = SdkConfig(
                 appId = AppID.VNDIRECT,
-                appKey = AppKey.VNDIRECT_DEV,
-                accountKey = AccountKey.VNDIRECT_DEV,
+                appKey = AppKey.VNDIRECT_PRO,
+                accountKey = AccountKey.VNDIRECT_PRO,
                 isSyncContact = false,
                 hidePhone = false,
                 hideCreateGroup = false,
