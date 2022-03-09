@@ -70,7 +70,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.40.1"
-    val sdkNetAloVersion = "3.0.1"
+    val sdkNetAloVersion = "3.0.2"
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("com.google.android.material:material:1.5.0")
