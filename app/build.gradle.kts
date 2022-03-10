@@ -21,6 +21,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
+        viewBinding = true
         dataBinding = true
     }
     packagingOptions {
@@ -70,7 +71,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.40.1"
-    val sdkNetAloVersion = "3.0.2"
+    val sdkNetAloVersion = "3.0.3"
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("com.google.android.material:material:1.5.0")
@@ -80,9 +81,9 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    debugImplementation("vn.netacom:NetAloFull-Dev:$sdkNetAloVersion") //(for dev)
-    releaseImplementation("vn.netacom:NetAloFull:$sdkNetAloVersion") //(for production)
-
+//    debugImplementation("vn.netacom:NetAloFull-Dev:$sdkNetAloVersion") //(for dev)
+//    releaseImplementation("vn.netacom:NetAloFull:$sdkNetAloVersion") //(for production)
+    implementation("vn.netacom:NetAloFull:$sdkNetAloVersion")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-work:1.0.0")
