@@ -12,9 +12,9 @@ dependencyResolutionManagement {
 //        maven {
 //            setUrl("https://github.com/Netacom-NetAlo/NetaloSDKs-Android/raw/main/NetAloSDK")
 //        }
-        //maven(url = "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases")
+//        maven(url = "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases")
     }
 }
-rootProject.name = "NetAloSDKAndroid"
+rootProject.name = "DLinkSDKAndroid"
 include(":app")
  
