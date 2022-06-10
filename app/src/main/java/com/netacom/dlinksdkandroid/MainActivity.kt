@@ -11,6 +11,7 @@ import com.netacom.full.ui.sdk.NetAloSDK
 import com.netacom.lite.config.EndPoint
 import com.netacom.lite.define.ErrorCodeDefine
 import com.netacom.lite.define.GalleryType
+import com.netacom.lite.define.GroupType
 import com.netacom.lite.entity.ui.local.LocalFileModel
 import com.netacom.lite.entity.ui.theme.NeTheme
 import com.netacom.lite.entity.ui.user.NeUser
@@ -23,10 +24,11 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
 
-    //private val user8 = NeUser(id = 281474977316524, token = "cae12d8a4df81813e5b07c874efbf878cf5e428a", username = "Toan 3333", isAdmin = true)
-    private val user8 = NeUser(id = 4785074604666666, token = "39c6737bb8e75e509b4fa0f37baf69ba322bc77b", username = "Toan test")
+    private val user8 = NeUser(id = 4785074609899969, token = "15a35745e95ca9e81cad67fd56280d52527cf6cf", username = "Toan")
 
-    private val user9 = NeUser(id = 281474977316531, token = "cbd155777c8e46358756a7a7eca73609fde92e7b", username = "Toan 4444")
+    private val user9 = NeUser(id = 4785074604085429, token = "105b81704b6e4ef84dfb2fdcb3183a208e97ff31", username = "Tuyet")
+
+    private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +58,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<AppCompatButton>(R.id.btnSetUser1).clickDebounce {
+            isUser8 = true
             NetAloSDK.setNetAloUser(user8)
         }
 
         findViewById<AppCompatButton>(R.id.btnSetUser2).clickDebounce {
+            isUser8 = false
             NetAloSDK.setNetAloUser(user9)
         }
 
@@ -72,7 +76,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<AppCompatButton>(R.id.btnSdkOpenChat).clickDebounce {
-            NetAloSDK.openNetAloSDK(context = this, neUserChat = user9)
+            NetAloSDK.openNetAloSDK(
+                context = this,
+                neUserChat = if (isUser8) user9 else user8
+            )
         }
 
         findViewById<AppCompatButton>(R.id.btnBlockUser).clickDebounce {

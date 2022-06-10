@@ -7,7 +7,7 @@ plugins {
 
 android {
     compileSdk = 32
-    buildToolsVersion = "32.1.0-rc1"
+    buildToolsVersion = "33.0.0"
 
     defaultConfig {
         applicationId = "com.netacom.dlinksdkandroid"
@@ -16,9 +16,6 @@ android {
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
-        renderscriptTargetApi = 19
-        renderscriptSupportModeEnabled = true
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
         viewBinding = true
@@ -70,17 +67,16 @@ android {
 }
 
 dependencies {
-    val hiltVersion = "2.40.1"
-    val sdkNetAloVersion = "3.0.3"
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+    val hiltVersion = "2.40.5"
+    val sdkNetAloVersion = "3.0.8"
+    implementation("androidx.core:core-ktx:1.8.0")
+    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("com.google.android.material:material:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-
 //    debugImplementation("vn.netacom:NetAloFull-Dev:$sdkNetAloVersion") //(for dev)
 //    releaseImplementation("vn.netacom:NetAloFull:$sdkNetAloVersion") //(for production)
     implementation("vn.netacom:NetAloFull:$sdkNetAloVersion")

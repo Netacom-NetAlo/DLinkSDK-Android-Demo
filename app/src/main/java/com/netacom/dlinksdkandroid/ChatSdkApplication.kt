@@ -4,6 +4,8 @@
  *  *
  */
 
+@file:OptIn(ObsoleteCoroutinesApi::class, ExperimentalCoroutinesApi::class, FlowPreview::class)
+
 package com.netacom.dlinksdkandroid
 
 import android.app.Application
@@ -18,6 +20,9 @@ import com.netacom.lite.sdk.AppKey
 import com.netacom.lite.sdk.SdkConfig
 import dagger.hilt.android.HiltAndroidApp
 import io.realm.Realm
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import javax.inject.Inject
 
 /**Created by vantoan on 23,July,2020
