@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
     buildToolsVersion = "33.0.0"
 
     defaultConfig {
         applicationId = "com.netacom.dlinksdkandroid"
         minSdk = 23
-        targetSdk = 30
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -40,17 +40,9 @@ android {
             pickFirsts += setOf("**/lib/**")
         }
     }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     signingConfigs {
         create("release") {
-            storeFile = file("/Volumes/Data/Work/Netacom/SDK/NetAloSdkAndroid/demo.jks")
+            storeFile = file("demo.jks")
             storePassword = "123456"
             keyAlias = "Demo"
             keyPassword = "123456"
@@ -59,16 +51,16 @@ android {
     buildTypes {
         getByName("release")  {
             signingConfig = signingConfigs.getByName("release")
-            isShrinkResources = false
-            isMinifyEnabled = false
+            isShrinkResources = true
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
 }
 
 dependencies {
-    val hiltVersion = "2.40.5"
-    val sdkNetAloVersion = "3.0.8"
+    val hiltVersion = "2.42"
+    val sdkNetAloVersion = "3.1.6"
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.appcompat:appcompat:1.4.2")
     implementation("com.google.android.material:material:1.6.1")

@@ -5,18 +5,18 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.google.android.material.snackbar.Snackbar
-import com.netacom.base.chat.binding.clickDebounce
-import com.netacom.base.chat.logger.Logger
-import com.netacom.full.ui.sdk.NetAloSDK
-import com.netacom.lite.config.EndPoint
-import com.netacom.lite.define.ErrorCodeDefine
-import com.netacom.lite.define.GalleryType
-import com.netacom.lite.define.GroupType
-import com.netacom.lite.entity.ui.local.LocalFileModel
-import com.netacom.lite.entity.ui.theme.NeTheme
-import com.netacom.lite.entity.ui.user.NeUser
-import com.netacom.lite.network.model.response.SettingResponse
-import com.netacom.lite.util.CallbackResult
+import com.asia.sdkbase.binding.clickDebounce
+import com.asia.sdkbase.logger.Logger
+import com.asia.sdkui.ui.sdk.NetAloSDK
+import com.asia.sdkcore.config.EndPoint
+import com.asia.sdkcore.define.ErrorCodeDefine
+import com.asia.sdkcore.define.GalleryType
+import com.asia.sdkcore.define.GroupType
+import com.asia.sdkcore.entity.ui.local.LocalFileModel
+import com.asia.sdkcore.entity.ui.theme.NeTheme
+import com.asia.sdkcore.entity.ui.user.NeUser
+import com.asia.sdkcore.network.model.response.SettingResponse
+import com.asia.sdkcore.util.CallbackResult
 import kotlinx.coroutines.*
 
 @ObsoleteCoroutinesApi
@@ -24,7 +24,7 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
 
-    private val user8 = NeUser(id = 4785074609899969, token = "15a35745e95ca9e81cad67fd56280d52527cf6cf", username = "Toan")
+    private val user8 = NeUser(id = 4785074617559290, token = "0e0ac822ac7e77eb2dc8bcd9b3c5838af9e70d96", username = "Van Mai")
 
     private val user9 = NeUser(id = 4785074604085429, token = "105b81704b6e4ef84dfb2fdcb3183a208e97ff31", username = "Tuyet")
 
