@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.os.bundleOf
 import com.google.android.material.snackbar.Snackbar
 import com.asia.sdkbase.binding.clickDebounce
 import com.asia.sdkbase.logger.Logger
@@ -17,17 +18,15 @@ import com.asia.sdkcore.entity.ui.theme.NeTheme
 import com.asia.sdkcore.entity.ui.user.NeUser
 import com.asia.sdkcore.network.model.response.SettingResponse
 import com.asia.sdkcore.util.CallbackResult
+import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.*
 
 @ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
 @FlowPreview
 class MainActivity : AppCompatActivity() {
-
-    private val user8 = NeUser(id = 4785074617559290, token = "0e0ac822ac7e77eb2dc8bcd9b3c5838af9e70d96", username = "Van Mai")
-
-    private val user9 = NeUser(id = 4785074604085429, token = "105b81704b6e4ef84dfb2fdcb3183a208e97ff31", username = "Tuyet")
-
+    private val user8 = NeUser(id = 4785074609899969, token = "020160006855838e4a0da3ed852157ec00f0cYzz", username = "Toan")
+    private val user9 = NeUser(id = 4785074604085429, token = "0022f619223eaa414a2abf7283827cf171639iOy", username = "Tuyet")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,9 +113,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<AppCompatButton>(R.id.btnSdkLogOut).clickDebounce {
             //NetAloSDK.netAloEvent?.send(LocalFileModel(filePath = ""))
-            val map: MutableMap<String, String> = mutableMapOf()
-            map["test"] = "data"
-            NetAloSDK.eventFireBase(map)
+            val remoteMessage: RemoteMessage= RemoteMessage(bundleOf())
+            NetAloSDK.initFirebase(applicationContext, remoteMessage)
         }
 
         findViewById<AppCompatButton>(R.id.btnSdkListContact).clickDebounce {
@@ -143,8 +141,7 @@ class MainActivity : AppCompatActivity() {
             settingResponse = SettingResponse(
                 apiEndpoint = EndPoint.URL_API,
                 cdnEndpoint = EndPoint.URL_CDN,
-                chatEndpoint = EndPoint.URL_SOCKET,
-                turnserverEndpoint = EndPoint.URL_TURN
+                chatEndpoint = EndPoint.URL_SOCKET
             )
         )
     }

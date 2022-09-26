@@ -66,3 +66,4 @@
 -keep class org.webrtc.** { *; }
 -keep class vn.com.vndirect.stocks.room { *; }
 -keep class org.json.JSONArray
+-keep class kotlin.reflect.**
