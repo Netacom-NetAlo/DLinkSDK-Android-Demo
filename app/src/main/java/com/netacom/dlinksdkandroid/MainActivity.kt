@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<AppCompatButton>(R.id.btnSdkThemeOrange).clickDebounce {
             NetAloSDK.initTheme(
                 NeTheme(
-                    mainColor = "#f5783f",
-                    subColorLight = "#4df5783f",
-                    subColorDark = "#683A00",
-                    toolbarDrawable = "#f5783f"
+                    mainColor = "#FF9500",
+                    subColorLight = "#F9D9C9",
+                    subColorDark = "#ef5222",
+                    toolbarDrawable = "#FF9500"
                 )
             )
         }

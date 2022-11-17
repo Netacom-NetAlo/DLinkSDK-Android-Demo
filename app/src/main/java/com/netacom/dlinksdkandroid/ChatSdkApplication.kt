@@ -41,11 +41,11 @@ class ChatSdkApplication : Application(), Configuration.Provider {
             .setWorkerFactory(netAloSdkCore.workerFactory)
             .build()
 
-    private var neTheme = NeTheme(
-        mainColor = "#f5783f",
+    private val sdkTheme = NeTheme(
+        mainColor = "#FF9500",
         subColorLight = "#F9D9C9",
-        subColorDark = "#683A00",
-        toolbarDrawable = "#f5783f",
+        subColorDark = "#ef5222",
+        toolbarDrawable = "#FF9500"
     )
 
     override fun attachBaseContext(base: Context?) {
@@ -70,7 +70,7 @@ class ChatSdkApplication : Application(), Configuration.Provider {
                 hideCallInChat = false,
                 classMainActivity = MainActivity::class.java.name
             ),
-            neTheme = neTheme
+            neTheme = sdkTheme
         )
     }
 }
