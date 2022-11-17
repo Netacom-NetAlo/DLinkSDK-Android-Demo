@@ -26,7 +26,8 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     private val user8 = NeUser(id = 4785074609899969, token = "020160006855838e4a0da3ed852157ec00f0cYzz", username = "Toan")
-    private val user9 = NeUser(id = 4785074604085429, token = "0022f619223eaa414a2abf7283827cf171639iOy", username = "Tuyet")
+    //private val user9 = NeUser(id = 4785074604085429, token = "0022f619223eaa414a2abf7283827cf171639iOy", username = "Tuyet")
+    private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,12 +59,12 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<AppCompatButton>(R.id.btnSetUser1).clickDebounce {
             isUser8 = true
-            NetAloSDK.setNetAloUser(user8)
+            NetAloSDK.setNetAloUser(this, user8)
         }
 
         findViewById<AppCompatButton>(R.id.btnSetUser2).clickDebounce {
             isUser8 = false
-            NetAloSDK.setNetAloUser(user9)
+            NetAloSDK.setNetAloUser(this, user9)
         }
 
         findViewById<AppCompatButton>(R.id.btnSdkOpen).clickDebounce {
@@ -102,6 +103,7 @@ class MainActivity : AppCompatActivity() {
                 return@clickDebounce
             }
             NetAloSDK.setNetAloUser(
+                this,
                 neUser = NeUser(
                     id = userId,
                     token = token,
