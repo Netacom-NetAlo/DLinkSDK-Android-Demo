@@ -63,11 +63,12 @@ class ChatSdkApplication : Application(), Configuration.Provider {
                 appKey = AppKey.VNDIRECT_PRO,
                 accountKey = AccountKey.VNDIRECT_PRO,
                 isSyncContact = false,
-                hidePhone = false,
-                hideCreateGroup = false,
-                hideAddInfoInChat = false,
-                hideInfoInChat = false,
-                hideCallInChat = false,
+                hidePhone = true,
+                hideCreateGroup = true,
+                hideAddInfoInChat = true,
+                hideInfoInChat = true,
+                hideCallInChat = true,
+                hideSearch = true,
                 classMainActivity = MainActivity::class.java.name
             ),
             neTheme = sdkTheme
