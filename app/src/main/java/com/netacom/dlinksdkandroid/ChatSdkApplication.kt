@@ -67,7 +67,7 @@ class ChatSdkApplication : Application(), Configuration.Provider {
                 hideCreateGroup = true,
                 hideAddInfoInChat = true,
                 hideInfoInChat = true,
-                hideCallInChat = true,
+                hideCallInChat = false,
                 hideSearch = true,
                 classMainActivity = MainActivity::class.java.name
             ),
