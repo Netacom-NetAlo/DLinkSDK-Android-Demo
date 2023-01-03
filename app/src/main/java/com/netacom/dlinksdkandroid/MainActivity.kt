@@ -28,7 +28,7 @@ import org.json.JSONObject
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
-    private val user8 = NeUser(id = 4785074617709103, token = "07958b840be4082c4b5cadea73353f4293658dMr", username = "ToanMobile")
+    private val user8 = NeUser(id = 4785074617709103, token = "045626a0acadb8dd4365991965a1c9bc1378Hvns", username = "ToanMobile")
     private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
     private var isUser8 = true
 
