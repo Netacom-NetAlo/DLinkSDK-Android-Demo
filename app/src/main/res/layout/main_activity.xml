@@ -65,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:constraint_referenced_ids="btnSetUser1,btnSetUser2,btnCustomUser,btnSdkOpen,btnSdkOpenChat, btnBlockUser"
+        app:constraint_referenced_ids="btnSetUser1,btnSetUser2,btnCustomUser,btnSdkOpen,btnSdkOpenChat, btnOpenGroup"
         app:flow_verticalGap="@dimen/dp_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:constraint_referenced_ids="btnSdkThemeGreen,btnSdkThemeOrange,btnSdkLogOut,btnSdkListContact, btnStartActivitySdk, btnSendNotification"
+        app:constraint_referenced_ids="btnSdkThemeGreen,btnSdkThemeOrange,btnSdkLogOut,btnSdkListContact, btnStartActivitySdk, btnBlockUser"
         app:flow_verticalGap="@dimen/dp_8"
         app:layout_constraintStart_toEndOf="@+id/layoutLeft"
         app:layout_constraintTop_toTopOf="@+id/layoutLeft"
@@ -129,13 +129,13 @@
         android:text="Open SDK chat 1-1" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBlockUser"
+        android:id="@+id/btnOpenGroup"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="@dimen/dp_160"
         android:layout_height="@dimen/dp_60"
         android:background="@color/color_bg_grey_text"
         android:foreground="?android:attr/selectableItemBackground"
-        android:text="Block User"
+        android:text="Open Group Chat"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -185,13 +185,13 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSendNotification"
+        android:id="@+id/btnBlockUser"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="@dimen/dp_160"
         android:layout_height="@dimen/dp_60"
         android:background="@color/color_bg_grey_text"
         android:foreground="?android:attr/selectableItemBackground"
-        android:text="Send Notification"
+        android:text="Block User"
         tools:ignore="MissingConstraints" />
 
     <View

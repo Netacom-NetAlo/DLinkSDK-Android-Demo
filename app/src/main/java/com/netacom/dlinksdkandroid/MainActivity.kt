@@ -2,6 +2,7 @@ package com.netacom.dlinksdkandroid
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
@@ -83,6 +84,13 @@ class MainActivity : AppCompatActivity() {
                 context = this,
                 neUserChat = if (isUser8) user9 else user8
             )
+        }
+
+        findViewById<AppCompatButton>(R.id.btnOpenGroup).clickDebounce {
+            NetAloSDK.openNetAloSDK(context = this, groupID = if (isUser8) "4793254696590321" else "4791747962948996", callbackError = {
+                Logger.e("error::$it")
+                Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            })
         }
 
         findViewById<AppCompatButton>(R.id.btnBlockUser).clickDebounce {
