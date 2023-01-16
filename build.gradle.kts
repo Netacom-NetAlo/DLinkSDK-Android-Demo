@@ -8,9 +8,22 @@ buildscript {
         maven(url = "https://jitpack.io")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.3.1")
+        classpath("com.android.tools.build:gradle:7.4.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
         classpath("com.google.dagger:hilt-android-gradle-plugin:$hiltVersion")
+    }
+}
+
+subprojects {
+    afterEvaluate {
+        configurations.all {
+            resolutionStrategy.eachDependency {
+                when (requested.module.toString()) {
+                    "androidx.core:core-ktx" -> useVersion("1.8.0")
+                    "androidx.annotation:annotation-experimental" -> useVersion("1.2.0")
+                }
+            }
+        }
     }
 }
 

@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
-    buildToolsVersion = "33.0.0"
+    compileSdk = 32
+    buildToolsVersion = "32.0.0"
 
     defaultConfig {
         applicationId = "com.netacom.dlinksdkandroid"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -60,15 +60,12 @@ android {
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.43"
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
+    val sdkNetAloVersion = "3.1.44"
+    implementation("androidx.appcompat:appcompat:1.5.0") {
+        exclude(group = "androidx.core", module = "core")
+    }
+    implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
 //    debugImplementation("vn.netacom:NetAloFull-Dev:$sdkNetAloVersion") //(for dev)
 //    releaseImplementation("vn.netacom:NetAloFull:$sdkNetAloVersion") //(for production)
     implementation("com.stringee.sdk.android:stringee-android-sdk:1.9.8")

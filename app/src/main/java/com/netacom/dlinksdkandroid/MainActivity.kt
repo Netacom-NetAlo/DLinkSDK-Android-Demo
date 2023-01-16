@@ -1,7 +1,6 @@
 package com.netacom.dlinksdkandroid
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -21,7 +20,6 @@ import com.asia.sdkui.ui.sdk.NetAloSDK
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.*
-import org.json.JSONObject
 
 
 @ObsoleteCoroutinesApi
@@ -29,7 +27,7 @@ import org.json.JSONObject
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
-    private val user8 = NeUser(id = 4785074617709103, token = "045626a0acadb8dd4365991965a1c9bc1378Hvns", username = "ToanMobile")
+    private val user8 = NeUser(id = 4785074617709103, token = "0769063f7ea0f96f4676ba1f60c31ce25f1bOMhL", username = "ToanMobile")
     private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
     private var isUser8 = true
 
@@ -140,8 +138,9 @@ class MainActivity : AppCompatActivity() {
             NetAloSDK.openGallery(context = this, maxSelections = 1, autoDismissOnMaxSelections = false, galleryType = GalleryType.GALLERY_ALL)
         }
 
-        findViewById<AppCompatButton>(R.id.btnSendNotification).clickDebounce {
-            val json = "{\"Payload\":\"{\\\"messageId\\\":\\\"570871223969989172\\\",\\\"groupId\\\":\\\"4791743771110404\\\",\\\"message\\\":\\\"json\\\",\\\"senderUin\\\":\\\"4785074605935470\\\",\\\"createdAt\\\":\\\"1670939212343689\\\",\\\"recipientUins\\\":[\\\"4785074605935470\\\",\\\"4785074604085429\\\"],\\\"senderName\\\":\\\"test123\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1670939211823960\\\",\\\"version\\\":1}\",\"Type\":\"message\"}"
+        findViewById<AppCompatButton>(R.id.btnBlockUser).clickDebounce {
+            val json = "{\"payload\":\"{\\\"messageId\\\":\\\"570871223969989172\\\",\\\"groupId\\\":\\\"4793911247512173\\\",\\\"message\\\":\\\"json\\\",\\\"senderUin\\\":\\\"4785074605935470\\\",\\\"createdAt\\\":\\\"1670939212343689\\\",\\\"recipientUins\\\":[\\\"4785074605935470\\\",\\\"4785074604085429\\\"],\\\"senderName\\\":\\\"test123\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1670939211823960\\\",\\\"version\\\":1}\"}"
+            //val json = "{\"Payload\":\"{\\\"messageId\\\":\\\"570871223969989172\\\",\\\"groupId\\\":\\\"4791743771110404\\\",\\\"message\\\":\\\"json\\\",\\\"senderUin\\\":\\\"4785074605935470\\\",\\\"createdAt\\\":\\\"1670939212343689\\\",\\\"recipientUins\\\":[\\\"4785074605935470\\\",\\\"4785074604085429\\\"],\\\"senderName\\\":\\\"test123\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1670939211823960\\\",\\\"version\\\":1}\",\"Type\":\"message\"}"
             val remoteMessage = RemoteMessage.Builder("Data").addData("Data", json).build()
             NetAloSDK.initFirebase(this, remoteMessage)
         }

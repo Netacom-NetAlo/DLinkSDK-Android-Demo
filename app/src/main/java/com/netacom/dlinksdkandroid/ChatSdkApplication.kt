@@ -11,13 +11,13 @@ package com.netacom.dlinksdkandroid
 import android.app.Application
 import android.content.Context
 import androidx.work.Configuration
-import com.asia.sdkui.ui.sdk.NetAloSDK
-import com.asia.sdkui.ui.sdk.NetAloSdkCore
 import com.asia.sdkcore.entity.ui.theme.NeTheme
 import com.asia.sdkcore.sdk.AccountKey
 import com.asia.sdkcore.sdk.AppID
 import com.asia.sdkcore.sdk.AppKey
 import com.asia.sdkcore.sdk.SdkConfig
+import com.asia.sdkui.ui.sdk.NetAloSDK
+import com.asia.sdkui.ui.sdk.NetAloSdkCore
 import dagger.hilt.android.HiltAndroidApp
 import io.realm.Realm
 import kotlinx.coroutines.ExperimentalCoroutinesApi
