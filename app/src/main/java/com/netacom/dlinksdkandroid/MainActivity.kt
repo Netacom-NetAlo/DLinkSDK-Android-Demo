@@ -27,7 +27,7 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
-    private val user8 = NeUser(id = 4785074617709103, token = "0325fd4a05fbb9664b42925449520f8f22a2Yvcu", username = "Test01zzzzz")
+    private val user8 = NeUser(id = 4785074604676336, token = "0830d43d5cfbf0134f15965e3b0d0c2b3773MVpj", username = "Test01zzzzz")
     private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
     private var isUser8 = true
 
