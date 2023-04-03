@@ -125,15 +125,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<AppCompatButton>(R.id.btnSdkLogOut).clickDebounce {
-            //NetAloSDK.netAloEvent?.send(LocalFileModel(filePath = ""))
-            val remoteMessage: RemoteMessage= RemoteMessage(bundleOf())
-            //NetAloSDK.initFirebase(applicationContext, remoteMessage)
+            NetAloSDK.logOut(callbackSuccess = {}, callbackError = { error ->
+                Logger.e("callbackError=$error")
+            })
         }
 
-        findViewById<AppCompatButton>(R.id.btnSdkListContact).clickDebounce {
-//            NetAloSDK.getListContactFromServer { listContact ->
-//                Logger.e("listContact=" + listContact.map { it })
-//            }
+        findViewById<AppCompatButton>(R.id.btnSdkNumberBadge).clickDebounce {
+            //TODO: Update
             Logger.e("getNumberOfBadge=" + NetAloSDK.getNumberOfBadge())
         }
 
@@ -175,6 +173,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         CoroutineScope(Dispatchers.Default).launch {
+            //TODO: Update
             NetAloSDK.netAloEvent?.receive<SdkIntSend>()?.collect { data ->
                 Logger.e("SdkIntSend:data==$data")
                 when (data.type) {
