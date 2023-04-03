@@ -15,6 +15,8 @@ import com.asia.sdkcore.entity.ui.local.LocalFileModel
 import com.asia.sdkcore.entity.ui.theme.NeTheme
 import com.asia.sdkcore.entity.ui.user.NeUser
 import com.asia.sdkcore.network.model.response.SettingResponse
+import com.asia.sdkcore.sdk.SdkIntSend
+import com.asia.sdkcore.sdk.SdkType
 import com.asia.sdkcore.util.CallbackResult
 import com.asia.sdkui.ui.sdk.NetAloSDK
 import com.google.android.material.snackbar.Snackbar
@@ -27,7 +29,7 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
-    private val user8 = NeUser(id = 4785074604676336, token = "0830d43d5cfbf0134f15965e3b0d0c2b3773MVpj", username = "Test01zzzzz")
+    private val user8 = NeUser(id = 4785074617709103, token = "09032441d28ec11348439ac0abfcb24d914588PV", username = "ToanMobile")
     private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
     private var isUser8 = true
 
@@ -132,6 +134,7 @@ class MainActivity : AppCompatActivity() {
 //            NetAloSDK.getListContactFromServer { listContact ->
 //                Logger.e("listContact=" + listContact.map { it })
 //            }
+            Logger.e("getNumberOfBadge=" + NetAloSDK.getNumberOfBadge())
         }
 
         findViewById<AppCompatButton>(R.id.btnStartActivitySdk).clickDebounce {
@@ -168,6 +171,18 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Default).launch {
             NetAloSDK.netAloEvent?.receive<ArrayList<LocalFileModel>>()?.collect { listPhoto ->
                 Logger.e("SELECT_PHOTO_VIDEO==$listPhoto")
+            }
+        }
+
+        CoroutineScope(Dispatchers.Default).launch {
+            NetAloSDK.netAloEvent?.receive<SdkIntSend>()?.collect { data ->
+                Logger.e("SdkIntSend:data==$data")
+                when (data.type) {
+                    SdkType.URL_PREVIEW -> {}
+                    SdkType.BADGE -> Logger.e("SdkIntSend:data==${data.data}")
+                    SdkType.CALL_VOICE -> {}
+                    SdkType.CALL_VIDEO -> {}
+                }
             }
         }
 
