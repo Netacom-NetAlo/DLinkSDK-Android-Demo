@@ -6,7 +6,7 @@
 
 @file:OptIn(ObsoleteCoroutinesApi::class, ExperimentalCoroutinesApi::class, FlowPreview::class)
 
-package com.netacom.dlinksdkandroid
+package com.netacom.vndirect
 
 import android.app.Application
 import android.content.Context

@@ -1,11 +1,10 @@
-package com.netacom.dlinksdkandroid
+package com.netacom.vndirect
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.os.bundleOf
 import com.asia.sdkbase.binding.clickDebounce
 import com.asia.sdkbase.logger.Logger
 import com.asia.sdkcore.config.EndPoint
@@ -29,8 +28,8 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
-    private val user8 = NeUser(id = 4785074617709103, token = "09032441d28ec11348439ac0abfcb24d914588PV", username = "ToanMobile")
-    private val user9 = NeUser(id = 4785074617579316, token = "", username = "DLink")
+    private val user8 = NeUser(id = 4785074617709103, token = "0676a136f28a6c0841c28942e129d077d398y0lL", username = "ToanMobile")
+    private val user9 = NeUser(id = 4785074617681018, token = "0458f92cb8d7fa33422f822e27862a9f1746pLr9", username = "VietNT")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {

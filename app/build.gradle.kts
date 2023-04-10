@@ -3,6 +3,8 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -10,7 +12,7 @@ android {
     buildToolsVersion = "32.0.0"
 
     defaultConfig {
-        applicationId = "com.netacom.dlinksdkandroid"
+        applicationId = "com.netacom.vndirect"
         minSdk = 23
         targetSdk = 31
         versionCode = 1
@@ -49,18 +51,22 @@ android {
         }
     }
     buildTypes {
-        getByName("release")  {
+        getByName("release") {
             signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
+            extra["alwaysUpdateBuildId"] = false
+            extra["enableCrashlytics"] = false
         }
     }
 }
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.47"
+    val sdkNetAloVersion = "3.1.48"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }
@@ -76,4 +82,5 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-work:1.0.0")
     kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.1.2")
 }
