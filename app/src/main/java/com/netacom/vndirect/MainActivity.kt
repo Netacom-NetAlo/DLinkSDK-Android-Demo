@@ -29,7 +29,7 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
     private val user8 = NeUser(id = 4785074617709103, token = "0676a136f28a6c0841c28942e129d077d398y0lL", username = "ToanMobile")
-    private val user9 = NeUser(id = 4785074617681018, token = "0458f92cb8d7fa33422f822e27862a9f1746pLr9", username = "VietNT")
+    private val user9 = NeUser(id = 4785074617681018, token = "045840a13ccee2064ed7a3229f528bdf695eqCXT", username = "VietNT")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -139,9 +139,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<AppCompatButton>(R.id.btnBlockUser).clickDebounce {
-            val json = "{\"payload\":\"{\\\"messageId\\\":\\\"570871223969989172\\\",\\\"groupId\\\":\\\"4793911247512173\\\",\\\"message\\\":\\\"json\\\",\\\"senderUin\\\":\\\"4785074605935470\\\",\\\"createdAt\\\":\\\"1670939212343689\\\",\\\"recipientUins\\\":[\\\"4785074605935470\\\",\\\"4785074604085429\\\"],\\\"senderName\\\":\\\"test123\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1670939211823960\\\",\\\"version\\\":1}\"}"
-            //val json = "{\"Payload\":\"{\\\"messageId\\\":\\\"570871223969989172\\\",\\\"groupId\\\":\\\"4791743771110404\\\",\\\"message\\\":\\\"json\\\",\\\"senderUin\\\":\\\"4785074605935470\\\",\\\"createdAt\\\":\\\"1670939212343689\\\",\\\"recipientUins\\\":[\\\"4785074605935470\\\",\\\"4785074604085429\\\"],\\\"senderName\\\":\\\"test123\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1670939211823960\\\",\\\"version\\\":1}\",\"Type\":\"message\"}"
-            val remoteMessage = RemoteMessage.Builder("Data").addData("Data", json).build()
+            val mapJson = HashMap<String, String>()
+            mapJson["Body"] = "Toan Huynh Van (Android-NETACOM)"
+            mapJson["Data"] = "{\"Payload\":\"{\\\"messageId\\\":\\\"614217670768738368\\\",\\\"groupId\\\":\\\"4794397972975968\\\",\\\"message\\\":\\\"juu\\\",\\\"senderUin\\\":\\\"4785074617709103\\\",\\\"createdAt\\\":\\\"1681273810598276\\\",\\\"recipientUins\\\":[\\\"4785074617681018\\\",\\\"4785074617709103\\\"],\\\"senderName\\\":\\\"Toan Huynh Van (Android-NETACOM)\\\",\\\"groupType\\\":\\\"GROUP_TYPE_PUBLIC\\\",\\\"nonce\\\":\\\"1681273810808192\\\",\\\"version\\\":1}\",\"Type\":\"message\"}"
+            mapJson["Title"] = "DLink"
+            val remoteMessage = RemoteMessage.Builder("Data").setData(mapJson).build()
             NetAloSDK.initFirebase(this, remoteMessage)
         }
     }
