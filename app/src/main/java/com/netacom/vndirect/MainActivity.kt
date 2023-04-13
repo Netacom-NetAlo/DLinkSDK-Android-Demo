@@ -29,7 +29,7 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074605935470, token = "06239ce309736f7b4eef9095709b63435e3467B6", username = "Test123")
     private val user8 = NeUser(id = 4785074617709103, token = "0676a136f28a6c0841c28942e129d077d398y0lL", username = "ToanMobile")
-    private val user9 = NeUser(id = 4785074617681018, token = "045840a13ccee2064ed7a3229f528bdf695eqCXT", username = "VietNT")
+    private val user9 = NeUser(id = 4785074617681018, token = "08304a1192afb049411cb96afef32fa62f6eXyxy", username = "VietNT") //08022dca66d6e1c44deea6a47a58556024595nhf
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -66,7 +66,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.48"
+    val sdkNetAloVersion = "3.1.50"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }
