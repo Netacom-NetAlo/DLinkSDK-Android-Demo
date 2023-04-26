@@ -21,10 +21,10 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         Log.e("jsonObject::", jsonObject.toString())
         if (jsonObject.has("call")) {
             //Send notification call
-            NetAloSDK.onFirebaseReceivedCall(applicationContext, jsonPayload)
+            //NetAloSDK.onFirebaseReceivedCall(applicationContext, jsonPayload)
         } else {
             //Send notification message
-            NetAloSDK.onFirebaseReceivedChat(applicationContext, jsonPayload)
+           // NetAloSDK.onFirebaseReceivedChat(applicationContext, jsonPayload)
         }
         //Init logic parse message, call, secret chat v.v....
         //NetAloSDK.initFirebase(applicationContext, message)
