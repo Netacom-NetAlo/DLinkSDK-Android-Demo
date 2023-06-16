@@ -27,6 +27,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
            // NetAloSDK.onFirebaseReceivedChat(applicationContext, jsonPayload)
         }
         //Init logic parse message, call, secret chat v.v....
-        //NetAloSDK.initFirebase(applicationContext, message)
+        NetAloSDK.initFirebase(applicationContext, message)
     }
 }
