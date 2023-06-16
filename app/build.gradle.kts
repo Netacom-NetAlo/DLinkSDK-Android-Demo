@@ -8,13 +8,13 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
     buildToolsVersion = "32.0.0"
 
     defaultConfig {
         applicationId = "com.netacom.vndirect"
         minSdk = 23
-        targetSdk = 31
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -55,18 +55,18 @@ android {
             signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro", "proguard-sdk.pro")
         }
         getByName("debug") {
-            extra["alwaysUpdateBuildId"] = false
-            extra["enableCrashlytics"] = false
+            extra["alwaysUpdateBuildId"] = true
+            extra["enableCrashlytics"] = true
         }
     }
 }
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.52"
+    val sdkNetAloVersion = "3.1.53"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }

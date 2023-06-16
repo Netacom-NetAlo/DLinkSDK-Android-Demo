@@ -1,10 +1,13 @@
 package com.netacom.vndirect
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.os.bundleOf
+import com.asia.sdkbase.android_utils.Utils
 import com.asia.sdkbase.binding.clickDebounce
 import com.asia.sdkbase.logger.Logger
 import com.asia.sdkcore.config.EndPoint
@@ -19,6 +22,7 @@ import com.asia.sdkcore.sdk.SdkType
 import com.asia.sdkcore.util.CallbackResult
 import com.asia.sdkui.ui.sdk.NetAloSDK
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.*
 
@@ -27,9 +31,9 @@ import kotlinx.coroutines.*
 @ExperimentalCoroutinesApi
 @FlowPreview
 class MainActivity : AppCompatActivity() {
-    private val user8 = NeUser(id = 4785074617561538, token = "00258d43dd60d7f340ffb842395c3aba7e7d0npB", username = "Test123")
-    //private val user8 = NeUser(id = 4785074617709103, token = "0676a136f28a6c0841c28942e129d077d398y0lL", username = "ToanMobile")
-    private val user9 = NeUser(id = 4785074617681018, token = "02752ad645c1a06f41988b9cc0726678e2ecuRth", username = "VietNT") //id = 4785074617681018, token = "02752ad645c1a06f41988b9cc0726678e2ecuRth", username = "VietNT"
+    //private val user8 = NeUser(id = 4785074604572646, token = "0786dcc7318c9af24b1297fc3581fb32bacbDe4n", username = "DkPhuong")
+    private val user8 = NeUser(id = 4785074617709103, token = "0965e6024d372e3a4ebfa4ecf38d56b3046fpUc6", username = "ToanMobile")
+    private val user9 = NeUser(id = 4785074617681018, token = "0963f6d0817d30354e9fae40b1c0a5e669b7uEn8", username = "VietNT")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,7 +135,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<AppCompatButton>(R.id.btnSdkNumberBadge).clickDebounce {
             //TODO: Update
-            //Logger.e("getNumberOfBadge=" + NetAloSDK.getNumberOfBadge())
+            Log.e("getNumberOfBadge=", NetAloSDK.getNumberOfBadge().toString())
         }
 
         findViewById<AppCompatButton>(R.id.btnStartActivitySdk).clickDebounce {
