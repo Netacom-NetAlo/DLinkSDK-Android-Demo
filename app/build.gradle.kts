@@ -8,13 +8,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 32
     buildToolsVersion = "32.0.0"
 
     defaultConfig {
         applicationId = "com.netacom.vndirect"
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
