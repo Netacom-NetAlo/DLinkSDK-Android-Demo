@@ -49,6 +49,12 @@ android {
             keyAlias = "Demo"
             keyPassword = "123456"
         }
+        getByName("debug") {
+            storeFile = file("debug_keystore.jks")
+            storePassword = "androidDebug"
+            keyAlias = "Debug"
+            keyPassword = "androidDebug"
+        }
     }
     buildTypes {
         getByName("release") {
@@ -66,7 +72,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.53"
+    val sdkNetAloVersion = "3.1.54"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }

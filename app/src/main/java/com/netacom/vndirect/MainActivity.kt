@@ -32,8 +32,8 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074604572646, token = "0786dcc7318c9af24b1297fc3581fb32bacbDe4n", username = "DkPhuong")
-    private val user8 = NeUser(id = 4785074617709103, token = "0965e6024d372e3a4ebfa4ecf38d56b3046fpUc6", username = "ToanMobile")
-    private val user9 = NeUser(id = 4785074617681018, token = "0963f6d0817d30354e9fae40b1c0a5e669b7uEn8", username = "VietNT")
+    private val user8 = NeUser(id = 4785074617709103, token = "0319749f426b7a904289a7d38b722ccf6528QoWk", username = "ToanMobile")
+    private val user9 = NeUser(id = 4785074617709473, token = "0619090cc1725aed4cf3adb4540f26684f9epG1D", username = "DungNT")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -194,7 +194,6 @@ class MainActivity : AppCompatActivity() {
             NetAloSDK.netAloEvent?.receive<LocalFileModel>()?.collect { document ->
                 Logger.e("SELECT_FILE==$document")
             }
-
         }
 
         CoroutineScope(Dispatchers.Default).launch {
