@@ -61,7 +61,7 @@ android {
             signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro", "proguard-sdk.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro", "proguard-mobile.pro")
         }
         getByName("debug") {
             extra["alwaysUpdateBuildId"] = true
@@ -72,7 +72,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.54"
+    val sdkNetAloVersion = "3.1.55"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }
