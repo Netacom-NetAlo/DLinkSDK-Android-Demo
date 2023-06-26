@@ -61,7 +61,7 @@ android {
             signingConfig = signingConfigs.getByName("release")
             isShrinkResources = true
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro", "proguard-mobile.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
         getByName("debug") {
             extra["alwaysUpdateBuildId"] = true
