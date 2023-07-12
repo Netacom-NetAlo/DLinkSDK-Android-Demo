@@ -10,7 +10,7 @@ plugins {
 android {
     compileSdk = 32
     buildToolsVersion = "32.0.0"
-
+    namespace = "com.netacom.vndirect"
     defaultConfig {
         applicationId = "com.netacom.vndirect"
         minSdk = 23
@@ -72,7 +72,7 @@ android {
 
 dependencies {
     val hiltVersion = "2.42"
-    val sdkNetAloVersion = "3.1.55"
+    val sdkNetAloVersion = "3.1.56"
     implementation("androidx.appcompat:appcompat:1.5.0") {
         exclude(group = "androidx.core", module = "core")
     }
