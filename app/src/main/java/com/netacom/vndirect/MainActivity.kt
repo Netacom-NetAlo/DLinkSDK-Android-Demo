@@ -32,8 +32,8 @@ import kotlinx.coroutines.*
 @FlowPreview
 class MainActivity : AppCompatActivity() {
     //private val user8 = NeUser(id = 4785074604572646, token = "0786dcc7318c9af24b1297fc3581fb32bacbDe4n", username = "DkPhuong")
-    private val user8 = NeUser(id = 4785074617330776, token = "05426cb26c265dfd4912abd7500d4de816e8PUrF", username = "Test01")
-    private val user9 = NeUser(id = 4785074617709103, token = "05426cb26c265dfd4912abd7500d4de816e8PUrF", username = "ToanMobile")
+    private val user8 = NeUser(id = 4785074617681018, token = "0174805ca723f0be49c287b0dd0ea145dcaeq15n", username = "VietNT")
+    private val user9 = NeUser(id = 4785074617709103, token = "07287be7efdbab824429a20009bb0b4825fcT4fl", username = "ToanMobile")
     private var isUser8 = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
